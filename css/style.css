@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --Violet: hsl(257, 40%, 49%);
+    --Soft-Magenta: hsl(300, 69%, 71%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--Violet);
+}
+
+.background-mobile {
+    height: 21rem;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background-image: url('../img/bg-mobile.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.main .container {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.main .container .logo {
+    position: absolute;
+    top: 1rem;
+    width: 40%;
+}
+
+.main .container .title {
+    z-index: 100;
+    height: 17rem;
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.main .container .title .mockup {
+    min-width: 250px;
+    max-width: 300px;
+    min-height: 13rem;
+    max-height: 14rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main .container .description {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main .container .description .details {
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #fff;
+}
+
+.main .container .description .details h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.main .container .description .details p {
+    font-size: 1.1rem;
+}
+
+.main .container .description .btn {
+    background: #fff;
+    width: 220px;
+    text-align: center;
+    height: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 5px #00000068;
+}
+
+.main .container .description a {
+    color: var(--Violet);
+    text-decoration: none;
+}
+
+.main .container .description .redes {
+    width: 130px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .container .description .redes i {
+    font-size: 1rem;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    padding: 7%;
+}
+
+@media only screen and (min-width:768px) {
+    .background-mobile {
+        display: none;
+    }
+
+    .background--desktop {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/bg-desktop.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .main .container {
+        z-index: 2;
+    }
+
+    .main .container .title {
+        height: 28rem;
+        margin-top: 15%;
+    }
+
+    .main .container .title .mockup {
+        min-width: 30rem;
+        /* max-width: 50rem; */
+        min-height: 100%;
+    }
+
+    .main .container .description {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: start;
+    }
+
+    .main .container .description .details {
+        text-align: start;
+        justify-content: start;
+        padding: 2%;
+        height: auto;
+    }
+
+    .main .container .description .details p {
+        margin-top: 2%;
+    }
+
+    .main .container .description .btn {
+        width: 150px;
+        margin-left: 2%;
+        position: absolute;
+        bottom: 100px;
+    }
+
+    .main .container .description .btn:hover {
+        background-color: var(--Soft-Magenta);
+        color: #fff;
+    }
+
+    .main .container .description .redes {
+        position: absolute;
+        bottom: 100px;
+        right: 100px;
+        width: 180px
+    }
+
+    .main .container .description .redes i {
+        font-size: 1.5rem;
+        padding: 4% 6%;
+    }
+
+    .main .container .description .redes i:hover {
+        border: 1px solid var(--Soft-Magenta);
+        color: var(--Soft-Magenta);
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    .main .container {
+        display: none;
+        display: grid;
+        grid-template-columns: 55% 45%;
+        align-items: center;
+    }
+
+
+    .background--desktop {
+        left: -90px;
+        max-width: 95vw;
+    }
+
+    .main .container .title {
+        min-width: 100%;
+        height: 33rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main .container .title .logo {
+        width: 12%;
+        right: calc(100% - 250px);
+    }
+
+    .main .container .title .mockup {
+        max-width: 50rem;
+    }
+
+    .main .container .description {
+        height: auto;
+        width: 95%;
+        justify-self: flex-end;
+    }
+
+    .main .container .description .details {
+        width: 33.25rem;
+    }
+
+    .main .container .description .details h2 {
+        font-size: 2.5rem;
+    }
+
+    .main .container .description .details p {
+        font-size: 1.1rem;
+    }
+
+    .main .container .description .btn {
+        top: calc(100% - 250px);
+        height: 55px;
+        width: 200px;
+        border-radius: 25px;
+        font-size: 1.2rem;
+    }
+
+    .main .container .description .redes {
+        bottom: 30px;
+    }
+}
